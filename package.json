@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-for-redmobile-project",
+  "version": "0.1.0",
+  "description": "Node.js for redmobile project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npx modclean -r --ignore='example*,examples'"
+  },
+  "author": "Hiroyuki Okada",
+  "license": "MIT",
+  "dependencies": {
+    "@red-mobile/red-mobile-nodes": "^3.0.2",
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.1",
+    "fs-extra": "^11.1.1",
+    "multer": "^1.4.5-lts.1",
+    "node-red": "^3.0.2",
+    "node-red-contrib-image-output": "^0.6.4",
+    "node-red-contrib-string": "^1.0.0",
+    "node-red-dashboard": "^3.5.0",
+    "node-red-node-base64": "^0.3.0",
+    "node-red-node-email": "^2.0.1",
+    "qs": "^6.11.2",
+    "uuid": "^9.0.0",
+    "ws": "^8.13.0"
+  }
+}
