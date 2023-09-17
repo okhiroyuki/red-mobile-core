@@ -1,6 +1,6 @@
-const { v4: uuidv4 } = require('uuid');
-const bcryptjs = require('bcryptjs');
-const { EventEmitter } = require('events');
+const { v4: uuidv4 } = require("uuid");
+const bcryptjs = require("bcryptjs");
+const { EventEmitter } = require("events");
 
 const ev = new EventEmitter();
 let accessKey;
@@ -13,7 +13,7 @@ function init(_cordova) {
 
 function enableHost(req) {
   if (req.headers.authorization !== undefined) {
-    const token = req.headers.authorization.replace('Bearer: ', '');
+    const token = req.headers.authorization.replace("Bearer: ", "");
     return bcryptjs.compare(accessKey, token);
   }
   return false;

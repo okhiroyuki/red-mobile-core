@@ -1,23 +1,23 @@
-const WebSocket = require('ws');
+const WebSocket = require("ws");
 
 const wss = new WebSocket.Server({ noServer: true });
 let ws;
 
-wss.on('connection', (w) => {
-  console.log('serial connection');
+wss.on("connection", (w) => {
+  console.log("serial connection");
   ws = w;
 });
 
-wss.on('message', (message) => {
-  console.log('WebSocketServer: message : %s', message);
+wss.on("message", (message) => {
+  console.log("WebSocketServer: message : %s", message);
 });
 
-wss.on('error', (e) => {
-  console.log('WebSocketServer: error : %s', e);
+wss.on("error", (e) => {
+  console.log("WebSocketServer: error : %s", e);
 });
 
-wss.on('close', () => {
-  console.log('WebSocketServer: closed');
+wss.on("close", () => {
+  console.log("WebSocketServer: closed");
 });
 
 function send(message) {
