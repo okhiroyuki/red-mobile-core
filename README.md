@@ -1,9 +1,8 @@
-# Node-RED
+# nodejs-for-redmobile-project
 
 ## Requirement
 
 - nodenv
-- modclean (global inatall)
 
 ## Development
 
