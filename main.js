@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 const cordova = require("cordova-bridge");
 const http = require("http");
 const express = require("express");

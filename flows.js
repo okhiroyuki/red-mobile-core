@@ -62,7 +62,7 @@ function updateFlows(_data, _token) {
   // eslint-disable-next-line no-unused-vars
   axios
     .request(config)
-    .then((res) => {
+    .then(() => {
       uploadCallback();
     })
     .catch((error) => {

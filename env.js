@@ -17,7 +17,6 @@ module.exports = {
       }
       // eslint-disable-next-line global-require
       require("dotenv").config({ path: envPath });
-      console.log(process.env);
     });
   },
 };
