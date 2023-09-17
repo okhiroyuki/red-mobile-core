@@ -1,7 +1,8 @@
 {
-  "name": "nodejs-for-redmobile-project",
+  "name": "red-mobile-core",
   "version": "0.1.0",
-  "description": "Node.js for redmobile project",
+  "private": true,
+  "description": "Node.js for RedMobile project.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
