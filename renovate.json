@@ -12,7 +12,7 @@
     "automerge": false
   },
   "nodenv": {
-    "enabled": true
+    "enabled": false
   },
   "lockFileMaintenance": {
     "enabled": true,
