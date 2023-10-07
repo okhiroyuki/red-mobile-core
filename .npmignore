@@ -5,5 +5,5 @@ websocket/
 .node-version
 .pre-commit-config.yaml
 *.js
-*.shs
+*.sh
 renovate.json
