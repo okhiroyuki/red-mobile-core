@@ -1,0 +1,9 @@
+.github/
+websocket/
+.editorconfig
+.eslintrc.json
+.node-version
+.pre-commit-config.yaml
+*.js
+*.shs
+renovate.json
