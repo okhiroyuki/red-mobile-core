@@ -10,9 +10,7 @@
     "dependencyDashboardApproval": true
   },
   "nodenv": {
-    "enabled": false,
-    "automerge": true,
-    "platformAutomerge": true
+    "enabled": false
   },
   "lockFileMaintenance": {
     "enabled": true,
