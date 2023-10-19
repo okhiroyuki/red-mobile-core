@@ -20,7 +20,7 @@
     "node-red": "3.1.0",
     "node-red-contrib-image-output": "0.6.4",
     "node-red-contrib-string": "1.0.0",
-    "node-red-dashboard": "3.6.0",
+    "node-red-dashboard": "3.6.1",
     "node-red-node-base64": "0.3.0",
     "node-red-node-email": "2.0.1",
     "qs": "6.11.2",
