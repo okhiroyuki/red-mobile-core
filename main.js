@@ -69,12 +69,6 @@ function start(user, pass, port, wsport) {
       file: { module: "localfilesystem" },
     },
     editorTheme: {
-      menu: {
-        "menu-item-help": {
-          label: "Forum",
-          url: "https://groups.google.com/forum/#!forum/redmobile-apps",
-        },
-      },
       projects: {
         // To enable the Projects feature, set this value to true
         enabled: false,
