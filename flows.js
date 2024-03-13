@@ -1,7 +1,7 @@
 const fse = require("fs-extra");
 const axios = require("axios");
 const qs = require("qs");
-const { EventEmitter } = require("events");
+const { EventEmitter } = require("node:events");
 
 const ev = new EventEmitter();
 
@@ -12,107 +12,107 @@ let pass;
 let port;
 
 function init(_user, _pass, _port) {
-  user = _user;
-  pass = _pass;
-  port = _port;
+	user = _user;
+	pass = _pass;
+	port = _port;
 }
 
 function sendResponse(res, err) {
-  if (err) {
-    res.status(500).send();
-  } else {
-    res.status(200).send();
-  }
+	if (err) {
+		res.status(500).send();
+	} else {
+		res.status(200).send();
+	}
 }
 
 function uploadCallback(err) {
-  ev.emit("upload", err);
+	ev.emit("upload", err);
 }
 
 function clear(dir) {
-  fse.emptyDir(dir, (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("clear success");
-    }
-  });
+	fse.emptyDir(dir, (err) => {
+		if (err) {
+			console.log(err);
+		} else {
+			console.log("clear success");
+		}
+	});
 }
 
 function updateFlows(_data, _token) {
-  const config = {
-    baseURL: `${BASE_URL}:${port}`,
-    url: "/red/flows",
-    method: "post",
-    data: _data,
-    timeout: 60000,
-  };
+	const config = {
+		baseURL: `${BASE_URL}:${port}`,
+		url: "/red/flows",
+		method: "post",
+		data: _data,
+		timeout: 60000,
+	};
 
-  if (_token !== undefined) {
-    config.headers = {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${_token}`,
-    };
-  } else {
-    config.headers = {
-      "Content-Type": "application/json",
-    };
-  }
+	if (_token !== undefined) {
+		config.headers = {
+			"Content-Type": "application/json",
+			Authorization: `Bearer ${_token}`,
+		};
+	} else {
+		config.headers = {
+			"Content-Type": "application/json",
+		};
+	}
 
-  // eslint-disable-next-line no-unused-vars
-  axios
-    .request(config)
-    .then(() => {
-      uploadCallback();
-    })
-    .catch((error) => {
-      uploadCallback(error);
-    });
+	// eslint-disable-next-line no-unused-vars
+	axios
+		.request(config)
+		.then(() => {
+			uploadCallback();
+		})
+		.catch((error) => {
+			uploadCallback(error);
+		});
 }
 
 function getToken(data) {
-  const json = {
-    client_id: "node-red-admin",
-    grant_type: "password",
-    scope: "*",
-    username: user,
-    password: pass,
-  };
-  const config = {
-    baseURL: `${BASE_URL}:${port}`,
-    url: "/red/auth/token",
-    method: "post",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    data: qs.stringify(json),
-    timeout: 5000,
-  };
+	const json = {
+		client_id: "node-red-admin",
+		grant_type: "password",
+		scope: "*",
+		username: user,
+		password: pass,
+	};
+	const config = {
+		baseURL: `${BASE_URL}:${port}`,
+		url: "/red/auth/token",
+		method: "post",
+		headers: {
+			"Content-Type": "application/x-www-form-urlencoded",
+		},
+		data: qs.stringify(json),
+		timeout: 5000,
+	};
 
-  axios
-    .request(config)
-    .then((res) => {
-      updateFlows(data, res.data.access_token);
-    })
-    .catch((error) => {
-      uploadCallback(error);
-    });
+	axios
+		.request(config)
+		.then((res) => {
+			updateFlows(data, res.data.access_token);
+		})
+		.catch((error) => {
+			uploadCallback(error);
+		});
 }
 
 function upload(req, res) {
-  const data = JSON.parse(req.body.data);
-  ev.once("upload", (status) => {
-    sendResponse(res, status);
-  });
-  if (user !== undefined && pass !== undefined) {
-    getToken(data);
-  } else {
-    updateFlows(data);
-  }
+	const data = JSON.parse(req.body.data);
+	ev.once("upload", (status) => {
+		sendResponse(res, status);
+	});
+	if (user !== undefined && pass !== undefined) {
+		getToken(data);
+	} else {
+		updateFlows(data);
+	}
 }
 
 module.exports = {
-  init,
-  upload,
-  clear,
+	init,
+	upload,
+	clear,
 };
