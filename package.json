@@ -1,34 +1,35 @@
 {
-	"name": "@red-mobile/red-mobile-core-modules",
-	"version": "2.3.1",
-	"description": "Node.js for RedMobile project.",
-	"scripts": {
-		"lint": "npx @biomejs/biome check --apply .",
-		"test": "npm run lint"
-	},
-	"author": "Hiroyuki Okada",
-	"license": "MIT",
-	"dependencies": {
-		"@red-mobile/red-mobile-nodes": "3.4.1",
-		"axios": "1.6.8",
-		"bcryptjs": "2.4.3",
-		"body-parser": "1.20.2",
-		"cors": "2.8.5",
-		"dotenv": "16.4.5",
-		"express": "4.19.2",
-		"fs-extra": "11.2.0",
-		"multer": "1.4.5-lts.1",
-		"node-red": "3.1.8",
-		"node-red-contrib-image-output": "0.6.4",
-		"node-red-contrib-string": "1.0.0",
-		"node-red-dashboard": "3.6.5",
-		"node-red-node-base64": "0.3.0",
-		"node-red-node-email": "2.2.1",
-		"qs": "6.12.0",
-		"uuid": "9.0.1",
-		"ws": "8.16.0"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "1.6.3"
-	}
+  "name": "@red-mobile/red-mobile-core-modules",
+  "version": "2.3.1",
+  "description": "Node.js for RedMobile project.",
+  "scripts": {
+    "lint": "npx dprint check",
+    "fmt": "npx dprint fmt",
+    "test": "npm run lint"
+  },
+  "author": "Hiroyuki Okada",
+  "license": "MIT",
+  "dependencies": {
+    "@red-mobile/red-mobile-nodes": "3.4.1",
+    "axios": "1.6.8",
+    "bcryptjs": "2.4.3",
+    "body-parser": "1.20.2",
+    "cors": "2.8.5",
+    "dotenv": "16.4.5",
+    "express": "4.19.2",
+    "fs-extra": "11.2.0",
+    "multer": "1.4.5-lts.1",
+    "node-red": "3.1.8",
+    "node-red-contrib-image-output": "0.6.4",
+    "node-red-contrib-string": "1.0.0",
+    "node-red-dashboard": "3.6.5",
+    "node-red-node-base64": "0.3.0",
+    "node-red-node-email": "2.2.1",
+    "qs": "6.12.0",
+    "uuid": "9.0.1",
+    "ws": "8.16.0"
+  },
+  "devDependencies": {
+    "dprint": "^0.45.0"
+  }
 }

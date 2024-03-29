@@ -1,4 +1,5 @@
 .github/
+.devcontainer/
 .editorconfig
 renovate.json
-biome.json
+dprint.json
