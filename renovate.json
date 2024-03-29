@@ -5,20 +5,7 @@
   "major": {
     "automerge": false
   },
-  "nodenv": {
-    "enabled": false
-  },
-  "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "platformAutomerge": true
-  },
   "packageRules": [
-    {
-      "automerge": true,
-      "platformAutomerge": true,
-      "matchManagers": ["pre-commit"]
-    },
     {
       "automerge": true,
       "platformAutomerge": true,
