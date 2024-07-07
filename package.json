@@ -30,6 +30,6 @@
     "ws": "8.18.0"
   },
   "devDependencies": {
-    "dprint": "0.47.0"
+    "dprint": "0.47.1"
   }
 }
