@@ -1,5 +1,9 @@
 .github/
-.devcontainer/
+.devcontainer
+.npm
+.pre-commit-cache
+.pre-commit-config.yaml
 .editorconfig
+.yamllint
 renovate.json
 dprint.json
