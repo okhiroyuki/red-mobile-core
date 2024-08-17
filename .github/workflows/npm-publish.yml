@@ -4,20 +4,26 @@ name: npm publish
 # yamllint disable-line rule:truthy
 on:
   workflow_run:
-    workflows: [Node CI]
-    branches: [main]
-    types: [completed]
+    workflows:
+      - pre-commit
+    branches:
+      - main
+    types:
+      - completed
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
         with:
-          node-version: "20"
-      - uses: JS-DevTools/npm-publish@v3
-        id: publish
+          repository: okhiroyuki/composite-actions
+          path: ./.github/actions/composite-actions
+      - uses: ./.github/actions/composite-actions/npm-publish
         with:
-          token: ${{ secrets.NPM_TOKEN }}
+          npm-token: ${{ secrets.NPM_TOKEN }}
