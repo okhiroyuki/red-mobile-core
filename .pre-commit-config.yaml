@@ -1,0 +1,20 @@
+---
+repos:
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        args: [--strict, -c=.yamllint]
+
+  - repo: local
+    hooks:
+      - id: dprint
+        name: dprint fmt
+        entry: npx dprint fmt
+        args: ["--allow-no-files"]
+        language: system
+      - id: shellcheck
+        name: shellcheck
+        language: system
+        entry: shellcheck
+        files: ^(.*\.(sh|bash))$

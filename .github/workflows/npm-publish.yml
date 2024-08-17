@@ -1,5 +1,7 @@
+---
 name: npm publish
 
+# yamllint disable-line rule:truthy
 on:
   workflow_run:
     workflows: [Node CI]
