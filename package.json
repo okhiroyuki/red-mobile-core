@@ -4,8 +4,7 @@
   "description": "Node.js for RedMobile project.",
   "scripts": {
     "lint": "npx dprint check",
-    "fmt": "npx dprint fmt",
-    "test": "npm run lint"
+    "fmt": "npx dprint fmt"
   },
   "author": "Hiroyuki Okada",
   "license": "MIT",

@@ -2,6 +2,7 @@
 .devcontainer
 .npm
 .pre-commit-cache
+.node-version
 .pre-commit-config.yaml
 .editorconfig
 .yamllint
