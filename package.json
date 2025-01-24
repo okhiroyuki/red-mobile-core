@@ -23,7 +23,7 @@
     "node-red-contrib-string": "1.0.0",
     "node-red-dashboard": "3.6.5",
     "node-red-node-base64": "0.3.0",
-    "node-red-node-email": "3.0.2",
+    "node-red-node-email": "3.0.3",
     "qs": "6.14.0",
     "uuid": "10.0.0",
     "ws": "8.18.0"
